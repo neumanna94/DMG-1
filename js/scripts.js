@@ -1,10 +1,6 @@
 function apiRequestForWidget(){
   var method = 'GET';
-
   var url = 'https://s3.amazonaws.com/wheelhouse-cdn/wheelhouse-www/assets/timeslotdata.json';
-
-    console.log(url);
-
   var xhr = new XMLHttpRequest();
 
   if(!('withCredentials' in xhr)) {
@@ -37,8 +33,23 @@ function generateWidget(inputData){
   let timeSlots = inputData.scheduleDays[0].timeSlots;
   console.log(timeSlots);
   for(var i = 0; i < timeSlots.length; i ++){
-    $("#timeSlotsDiv").append("<div class='col-md-3'><button class='btn btn-primary'>" + slotDateTimeFormatter(timeSlots[i].slotDateTime) + "</button></div>");
+    if(i > 10){
+      $("#timeSlotsDiv").append("<a href='#' class='initHidden'><div class='col-md-3'><button class='btn btn-primary'>" + slotDateTimeFormatter(timeSlots[i].slotDateTime) + "</button></div></a>");
+      if(i==11){
+        $("#timeSlotsDiv").append("<div class='col-md-3'><button class='btn btn-secondary' id='more'> More </button></div>");
+        $("#more").click(function() {
+          displayHiddenButtons();
+        });
+      }
+    } else {
+      $("#timeSlotsDiv").append("<a href='#'><div class='col-md-3'><button class='btn btn-primary'>" + slotDateTimeFormatter(timeSlots[i].slotDateTime) + "</button></div></a>");
+    }
   }
+}
+
+function displayHiddenButtons(){
+  $("#more").parent().toggle();
+  $(".initHidden").toggle();
 }
 
 function slotDateTimeFormatter(inputSlotDateTime){
@@ -59,4 +70,7 @@ function slotDateTimeFormatter(inputSlotDateTime){
   }
 }
 
-apiRequestForWidget();
+
+$(document).ready(function(){
+    apiRequestForWidget();
+})

@@ -7,10 +7,10 @@
     <title>Time Slot Widget</title>
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="./js/scripts.js"></script> <!---Added reference to script file here ---><script
+    <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script><script type="text/javascript">try {
+  crossorigin="anonymous"></script><script src="./js/scripts.js"></script> <!---Added reference to script file here ---><script type="text/javascript">try {
 var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
 var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
@@ -62,11 +62,11 @@ window.uabInject = function() {};
                     <hr>
                     <div id="addContentHere" class="container">
                       <div class="row">
-                          <div class="col-md-3">
+                          <div class="col-md-12">
                           <h3><strong> Book Online </strong></h3>
-                          <h6><a href="#"> What do we treat?</a> <a href="#"> How much will it cost?</a></h6>
+                          <h6><strong><a href="#"> What do we treat?</a> &nbsp &nbsp &nbsp &nbsp<a href="#"> How much will it cost?</a></strong></h6>
                           <hr>
-                          <h4><strong>Tomorrow</strong></h4>
+                          <h4><strong>Tomorrow</h4>
                           <div class="row" id="timeSlotsDiv">
                           </div>
                         </div>
