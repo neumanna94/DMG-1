@@ -1,8 +1,10 @@
 #addContentHere {
-  width: 60%;
+  width: 50%;
   border-style: solid;
   border-width: 1px;
+  border-color: grey;
   margin-bottom: 2.5%;
+  margin-left: 2.5%;
 }
 .btn {
   width: 100%;
@@ -15,8 +17,7 @@
 .btn-secondary {
   background-color: white;
   color: grey;
-  border-style: solid;
-  border-width: 10px;
+  border: 2px solid grey;
 }
 
 #timeSlotsDiv {
@@ -24,5 +25,9 @@
 }
 
 .initHidden {
+  display: none;
+}
+
+.initHidden2 {
   display: none;
 }

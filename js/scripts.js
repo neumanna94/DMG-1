@@ -25,11 +25,17 @@ function apiRequestForWidget(){
     } else {
       console.log("else");
     }
+    $(".initHidden2").toggle();
     generateWidget(data);
   };
   xhr.send();
 }
+function generateStaticContent(){
+  $("#addContentHere").append("<div class='row'><div class='col-md-12'><h3><strong> Book Online </strong></h3><h6><strong><a href='#'> What do we treat </a> &nbsp &nbsp &nbsp &nbsp<a href='#'> How much will it cost?</a></strong></h6><hr><h4><strong> Tomorrow </strong></h4><div class='row' id='timeSlotsDiv'></div></div></div>");
+
+}
 function generateWidget(inputData){
+  generateStaticContent();
   let timeSlots = inputData.scheduleDays[0].timeSlots;
   console.log(timeSlots);
   for(var i = 0; i < timeSlots.length; i ++){
@@ -46,12 +52,6 @@ function generateWidget(inputData){
     }
   }
 }
-
-function displayHiddenButtons(){
-  $("#more").parent().toggle();
-  $(".initHidden").toggle();
-}
-
 function slotDateTimeFormatter(inputSlotDateTime){
   //Converting timeslot into a date object.
   let inputDate = new Date(inputSlotDateTime);
@@ -69,8 +69,7 @@ function slotDateTimeFormatter(inputSlotDateTime){
     return displayHours + ":" + displayMinutes + "p";
   }
 }
-
-
-$(document).ready(function(){
-    apiRequestForWidget();
-})
+function displayHiddenButtons(){
+  $("#more").parent().toggle();
+  $(".initHidden").toggle();
+}
